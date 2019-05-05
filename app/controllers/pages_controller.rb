@@ -2,6 +2,12 @@ class PagesController < ApplicationController
   authorize_resource :class => PagesController
   
   def index
+    if params[:q].present?
+      @activities = Activity.where('name like ?', "%#{params[:q]}%")
+    else
+      @activities = []
+    end
+
     @users = User.all
     if user_signed_in?
       @user_activities = Activity.where.not(id: current_user.activities.pluck(:id))

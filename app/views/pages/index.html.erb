@@ -15,8 +15,11 @@
 <% end %>
 <br>
 <form>
-	<input name="buscador" placeholder="ingrese palabra a buscar">
+	<input name="q" placeholder="ingrese palabra a buscar">
 </form>
+<div id="resultado">
+	<%= render 'activity' %>
+</div>
 <hr>
 
 
@@ -69,4 +72,17 @@
 <% end %>
 
 
+<script>
+  $("[name=q]").keyup(function(event){
+    if($(this).val().length > 2 || $(this).val().length == 0){
+      $.ajax({
+        url: '<%= pages_index_path %>',
+        type: 'GET',
+        dataType: 'script',
+        data: {q: $(this).val()
+      }
+
+    })}
+  })
+</script>
 
