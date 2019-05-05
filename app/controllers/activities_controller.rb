@@ -3,6 +3,11 @@ class ActivitiesController < ApplicationController
 
 	def index
 		@activity = Activity.find(params[:id])
+		if UserActivity.where(user_id: current_user.id,activity_id: @activity.id) != []
+			@registrada = true
+		else
+			@registrada = false
+		end
 	end
 
 	def new
@@ -34,5 +39,7 @@ class ActivitiesController < ApplicationController
 		@activity.update(remote_photo_url: params[:activity][:remote_photo_url])
     	redirect_to user_page_path(current_user)
 	end
+
+	
 	
 end

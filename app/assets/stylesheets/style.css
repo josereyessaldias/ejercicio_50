@@ -44,6 +44,24 @@
 	border: solid 1px black;
 }
 
+#resultado {
+	background-color: white;
+  	z-index: 1;
+  	float: left;
+}
+
+.resultado_fila{
+	line-height: 1.5;
+	list-style-type: none;
+	margin: 0 0 0 0;
+	padding: 5px 0 0 0;
+	width: 260px;
+}
+
+.resultado_fila li {
+	border-bottom: solid 1px gray;
+}
+
 /*  esto son estilos de edit user_act*/
 .agregar-info {
 	margin: 20px 0 0 20%;
@@ -67,4 +85,17 @@
 
 .fondo_activity {
 	min-height: 88vh;
+	width: 100%;
+	padding: 30px 30px 30px 30px;
+}
+
+.cuadro_centro_act {
+	padding: 20px 10% 20px 10%;
+	background-color: rgba(215, 215, 255, 0.75);
+	height: 88vh;
+	border-radius: 6px;
+}
+
+.boton {
+	text-align: right;
 }
