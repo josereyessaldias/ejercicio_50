@@ -1,6 +1,8 @@
 # README
 
 Agregué un seed enlazado con un csv e implementé backstretch.
+Logré subir a heroku con yarn
+https://ejercicio50.herokuapp.com
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
